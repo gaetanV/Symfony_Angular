@@ -1,2 +1,6 @@
-/TestBundle/composer.lock
-/TestBundle/vendor/
+
+/var/
+/vendor/
+.phpunit.result.cache
+.php-cs-fixer.cache
+composer.lock

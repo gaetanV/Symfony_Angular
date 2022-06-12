@@ -1,0 +1,31 @@
+syjs_js:
+    languages: ["fr",'en']
+
+framework:
+
+doctrine:
+    dbal:
+        url: 'mysql://root:mysql@127.0.0.1:3306/false?serverVersion=5.7&charset=utf8mb4'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: false
+        mappings:
+            TEST_ENTITY:
+                is_bundle: false
+                dir: '%kernel.project_dir%/tests/App/Entity'
+                prefix: 'SYJS\JsBundle\Tests\App\Entity'
+                alias: SYJS
+
+services:
+    test.validator:
+        alias: validator
+        public: true
+
+    test.form.factory:
+        alias: form.factory
+        public: true
+
+    test.form.registry:
+        alias: form.registry
+        public: true

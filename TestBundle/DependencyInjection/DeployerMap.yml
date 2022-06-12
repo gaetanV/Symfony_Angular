@@ -1,7 +1,0 @@
-Controller/DeployerController:
-    hash: "343D904EDFC867D88D3A1A72CC343D21A04B150E"
-    date: "16554654654"
-    env: dev
-    action : 
-        - getUser: ["A84","A45"]
-        - setUser: ["B85","C85"]
