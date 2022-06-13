@@ -1,4 +1,5 @@
 <?php
+
 namespace SYJS\JsBundle\Tests\App\Form;
 
 use SYJS\JsBundle\Tests\App\Entity\User;
@@ -9,33 +10,29 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserInscription extends AbstractType
 {
-
-    // @TODO $options["style"] 
+    // @TODO $options["style"]
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-   
         $builder
-                ->add('username')
-                ->add('email')
-                ->add('error',TextType::class);
+            ->add('username')
+            ->add('email')
+            ->add('error', TextType::class)
+        ;
     }
-    
 
     public function setDefaultOptions(OptionsResolver $resolver)
     {
-
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => User::class,
-            'extra_fields' => array("error"),
-            'style'=> "style"
-        ));
+            'extra_fields' => ['error'],
+            'style' => 'style',
+        ]);
     }
-    
-    
+
     public function getName()
-    {               
+    {
         $function = new \ReflectionClass($this);
-        $type = $function->getShortName();
-        return $type;
+
+        return $function->getShortName();
     }
 }

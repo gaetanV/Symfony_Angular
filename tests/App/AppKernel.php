@@ -10,14 +10,13 @@ class AppKernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    
     private function getBundlesPath(): string
     {
-        return __DIR__ .'/bundles.php';
+        return __DIR__.'/bundles.php';
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader): void {
-        $loader->load(__DIR__ . '/config_test.yml');
+    public function registerContainerConfiguration(LoaderInterface $loader): void
+    {
+        $loader->load(__DIR__.'/config_test.yml');
     }
-    
 }

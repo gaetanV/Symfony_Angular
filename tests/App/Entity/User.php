@@ -1,9 +1,10 @@
 <?php
+
 namespace SYJS\JsBundle\Tests\App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
@@ -18,6 +19,7 @@ class User
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
     /**
      * @var string
      * @Assert\NotBlank()
@@ -28,6 +30,7 @@ class User
      * @ORM\Column(name="username", type="string", length=30)
      */
     private $username;
+
     /**
      * @var string
      * @Assert\Regex(
@@ -41,11 +44,11 @@ class User
      * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
-    
-      /**
+
+    /**
      * @var string
      * @Assert\Email(
-     *   
+     *
      * )
      * @ORM\Column(name="email", type="string", length=30)
      */
